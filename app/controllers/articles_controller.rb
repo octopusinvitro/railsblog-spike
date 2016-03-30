@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: "yeqpacha", password: "secret", except: [:index, :show]
   before_action :fetch, only: [:edit, :show, :update, :destroy]
-
-  def fetch
-    @article = Article.find(params[:id])
-  end
 
   def index
     @articles = Article.all
@@ -42,6 +39,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def fetch
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(:title, :text)
