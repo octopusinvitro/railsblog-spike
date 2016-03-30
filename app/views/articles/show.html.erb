@@ -1,19 +1,20 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<h1><%= @article.title %></h1>
 
-<h2>Comments:</h2>
+<div class="small">
+    <p><%= @article.created_at.strftime("%d %b. %Y") %>
+       <%= @article.created_at.strftime("%H:%M") %></p>
+</div>
+
+<div>
+<%= simple_format(@article.text) %>
+</div>
+
+<h2>Comments</h2>
 <%= render @article.comments %>
 
 
-<h2>Add a comment:</h2>
+<h2>Add a comment</h2>
 
 <%= render 'comments/form' %>
 
-<p><%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Back', articles_path %></p>
+<p><%= link_to 'Edit', edit_article_path(@article), class: 'btn left' %> <%= link_to 'Back', articles_path, class: 'btn right' %></p>

@@ -30,11 +30,6 @@ body {
 }
 
 /*
-$second-color:     #442850;
-$spacing-unit:     1.5em;
-*/
-
-/*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
  *
@@ -113,6 +108,12 @@ li {
     list-style-type: square;
 }
 
+blockquote {
+    font-size: .8em;
+    padding-left: 1em;
+    border-left: .2em solid #442850;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -139,15 +140,12 @@ li {
     font-size:  12pt;
 }
 
-.article-item {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    margin: 1em 0;
+.link {
+    display: block;
 }
 
-.article-item__title {
-    flex-grow: 2;
+.article-item__buttons {
+    margin: .5em 0 1.5em;
 }
 
 .btn,
@@ -303,7 +301,31 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+
+.article-item {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 1em 0;
+}
+
+.article-item__title {
+    flex-grow: 2;
+}
+
+.link {
+    display: inline-block;
+    padding-left: 1em;
+    transition: text-indent .4s;
+}
+
+.link:hover {
+    text-indent: .5em;
+}
+
+.article-item__buttons {
+    margin: 0;
+}
 }
 
 @media print,
