@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     background-color: #1C2137;
 
@@ -114,6 +114,10 @@ blockquote {
     border-left: .2em solid #442850;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -144,7 +148,7 @@ blockquote {
     display: block;
 }
 
-.article-item__buttons {
+.article-item__actions {
     margin: .5em 0 1.5em;
 }
 
@@ -323,7 +327,7 @@ textarea {
     text-indent: .5em;
 }
 
-.article-item__buttons {
+.article-item__actions {
     margin: 0;
 }
 }
