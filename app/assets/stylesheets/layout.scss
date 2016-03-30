@@ -109,6 +109,10 @@ textarea {
     resize: vertical;
 }
 
+li {
+    list-style-type: square;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -146,13 +150,19 @@ textarea {
     flex-grow: 2;
 }
 
-.btn {
+.btn,
+input[type=submit],
+input[type=text],
+textarea {
     padding: .8em 1.5em;
     color: #fff;
     font-size: .6em;
     font-weight: 700;
-    text-decoration: none;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, .8);
+    border-radius: .3em
+}
+
+.btn {
     background-color: rgba(255, 255, 255, .1);
     box-shadow: 0   0   2px 1px rgba(0, 0, 0, .4), inset 
                -1px 1px 1px 0px rgba(255, 255, 255, .5);
@@ -166,13 +176,48 @@ textarea {
                 0 0   4px 1px rgba(0, 0, 0, 0.5);
 }
 
+input[type=submit] {
+    position: relative;
+    left: 100%;
+    transform: translate(-100%, 0);
+    border: 0;
+    background-color: rgba(0, 254, 181, 0.4);
+    box-shadow: 0 0   2px 1px rgba(0, 0, 0, .4), inset	
+                0 1px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+input[type=submit]:hover {
+    color: #00FEB5;
+    text-shadow: 0 0 .5em #00FEB5;
+    background-color: rgba(0, 254, 181, 0.08);
+    box-shadow: 0 1px 1px 0px rgba(255, 255, 255, .2), inset
+                0 0   4px 1px rgba(0, 0, 0, 0.5);
+}
+
+input[type=text],
+textarea {
+    box-sizing: border-box;
+    min-width: 100%;
+    border: 0;
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 -2px 2px 0px rgba(0, 0, 0, 0.4), inset
+                0 -2px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
 .left   { border-radius: .3em 0 0 .3em; }
 .right  { border-radius: 0 .3em .3em 0; margin-left: -.4em}
-.single { border-radius: .3em }
 
+/* ==========================================================================
+   Rails classes
+   ========================================================================== */
 
-
-
+.field_with_errors {
+    box-sizing: border-box;
+    border: .1em solid #00FEB5;
+    border-radius: .3em;
+    display: inline-block;
+    min-width: 100%;
+}
 
 
 
