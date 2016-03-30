@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Me!
+
+# THANKS
+
+    All.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Ruby on Rails, jQuery, Normalize.css

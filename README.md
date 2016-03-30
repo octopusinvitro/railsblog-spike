@@ -1,28 +1,17 @@
-== README
+# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* **Ruby version:** Check out the `.ruby-version` file.
 
-Things you may want to cover:
+* **How to setup the project:** 
+```bash
+$ bundle install
+$ bin/rake db:setup
+```
 
-* Ruby version
+* **How to start the app:** `$ bin/rails serve`
 
-* System dependencies
+* **How to start the app in production:** `$ bin/rails s -e production`
 
-* Configuration
+* **How to launch the app:** Go to http://localhost:3000.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* **How to run the test suite:** `$ bin/rake test`
