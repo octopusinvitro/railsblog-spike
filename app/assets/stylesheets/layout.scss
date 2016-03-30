@@ -1,0 +1,348 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color:       #fff;
+    font-size:   16pt;
+    line-height: 1.5;
+    min-height:  100%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    background-color: #1C2137;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#13242c+0,274d56+26,2c4065+50,472b54+73,301e34+100 */
+    background: -moz-linear-gradient(-45deg,  #13242c 0%, #274d56 26%, #2c4065 50%, #472b54 73%, #301e34 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #13242c 0%,#274d56 26%,#2c4065 50%,#472b54 73%,#301e34 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #13242c 0%,#274d56 26%,#2c4065 50%,#472b54 73%,#301e34 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13242c', endColorstr='#301e34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*
+$second-color:     #442850;
+$spacing-unit:     1.5em;
+*/
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background:  #399087;
+    text-shadow: none;
+}
+
+::selection {
+    background:  #399087;
+    text-shadow: none;
+}
+
+a {
+    color: #00FEB5;
+    text-shadow: 0 0 .5em #00FEB5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 .5em #fff;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.wrapper {
+    box-sizing: border-box;
+    max-width: 40em;
+    padding: 1em;
+    margin: auto;
+}
+
+.small {
+    font-size:  12pt;
+}
+
+.article-item {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 1em 0;
+}
+
+.article-item__title {
+    flex-grow: 2;
+}
+
+.btn {
+    padding: .8em 1.5em;
+    color: #fff;
+    font-size: .6em;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, .8);
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0   0   2px 1px rgba(0, 0, 0, .4), inset 
+               -1px 1px 1px 0px rgba(255, 255, 255, .5);
+    transition: background-color .1s, box-shadow .1s;
+}
+
+.btn:hover {
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 1px 0px rgba(255, 255, 255, .2), inset 
+                0 0   4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.left   { border-radius: .3em 0 0 .3em; }
+.right  { border-radius: 0 .3em .3em 0; margin-left: -.4em}
+.single { border-radius: .3em }
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
