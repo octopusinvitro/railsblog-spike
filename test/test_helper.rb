@@ -16,4 +16,12 @@ class ActiveSupport::TestCase
     articles(:article_with_comments)
   end
 
+  def create_comment_with(params)
+    Comment.new(params)
+  end
+
+  def create_comment_from_article
+    comments(:one)
+  end
+
 end
