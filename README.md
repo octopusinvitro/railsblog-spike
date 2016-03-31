@@ -14,4 +14,6 @@ $ bin/rake db:setup
 
 * **How to launch the app:** Go to http://localhost:3000.
 
-* **How to run the test suite:** `$ bin/rake test`
+* **How to run the test suite:** `$ bundle exec bin/rake test`
+
+* **How to run the test suite in pride mode:** `$ bundle exec bin/rake test TESTOPTS='--pride'`

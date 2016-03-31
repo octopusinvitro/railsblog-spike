@@ -7,4 +7,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_article_with(params)
+    Article.new(params)
+  end
+
+  def create_article_with_comments
+    articles(:article_with_comments)
+  end
+
 end
