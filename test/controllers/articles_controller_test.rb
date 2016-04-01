@@ -85,6 +85,12 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_assigns(:articles)
   end
 
+  test "should get edit" do
+    login
+    edit
+    assert_success
+  end
+
   test "should get an article's page" do
     show
     assert_success
@@ -122,13 +128,7 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_redirected_to article_path(assigns(:article))
   end
 
-  test "should delete article" do
-    login
-    destroy
-    assert_redirected_to articles_path
-  end
-
-  test "should render new if there were errors" do
+  test "should render new if there were errors when updating" do
     login
     bad_title = ''
     put :update, id: @id, article: {title: bad_title}
