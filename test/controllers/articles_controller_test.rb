@@ -43,18 +43,6 @@ class ArticlesControllerTest < ActionController::TestCase
     end
   end
 
-  test "should get the articles index" do
-    index
-    assert_success
-    assert_assigns(:articles)
-  end
-
-  test "should get an article's page" do
-    show
-    assert_success
-    assert_assigns(:article)
-  end
-
   test "should not allow to edit, add new, create, update or destroy articles if not authenticated" do
     edit
     assert_no_auth
@@ -91,6 +79,18 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_redirect
   end
 
+  test "should get the articles index" do
+    index
+    assert_success
+    assert_assigns(:articles)
+  end
+
+  test "should get an article's page" do
+    show
+    assert_success
+    assert_assigns(:article)
+  end
+
   test "should post a new article page" do
     login
     new_article
@@ -122,12 +122,16 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_redirected_to article_path(assigns(:article))
   end
 
+  test "should delete article" do
+    login
+    destroy
+    assert_redirected_to articles_path
+  end
+
   test "should render new if there were errors" do
     login
     bad_title = ''
-    assert_no_difference('Article.count') do
-      put :update, id: @id, article: {title: bad_title}
-    end
+    put :update, id: @id, article: {title: bad_title}
     assert_routing new_article_path, controller: 'articles', action: 'new'
   end
 
