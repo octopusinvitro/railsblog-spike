@@ -24,4 +24,22 @@ class ActiveSupport::TestCase
     comments(:one)
   end
 
+  def login
+    name     = 'yeqpacha'
+    password = 'secret'
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(name, password)
+  end
+
+  def assert_no_auth
+    assert_response 401
+  end
+
+  def assert_success
+    assert_response :success
+  end
+
+  def assert_redirect
+    assert_response :redirect
+  end
+
 end

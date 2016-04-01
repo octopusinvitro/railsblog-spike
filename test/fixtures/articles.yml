@@ -9,7 +9,5 @@ two:
   text: MyText
 
 article_with_comments:
-  id: 1
   title: MyString
   text: MyText
-
