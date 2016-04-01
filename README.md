@@ -17,3 +17,7 @@ $ bin/rake db:setup
 * **How to run the test suite:** `$ bundle exec bin/rake test`
 
 * **How to run the test suite in pride mode:** `$ bundle exec bin/rake test TESTOPTS='--pride'`
+
+## License
+
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
