@@ -42,4 +42,8 @@ class ActiveSupport::TestCase
     assert_response :redirect
   end
 
+  def assert_assigns(view_variable)
+    assert_not_nil assigns(view_variable)
+  end
+
 end
