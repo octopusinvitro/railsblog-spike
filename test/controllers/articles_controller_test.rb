@@ -94,7 +94,7 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_routing new_article_path, controller: 'articles', action: 'new'
   end
 
-  test "should destroy an article" do
+  test "deletes an article" do
     login
     delete :destroy, id: @id
     assert_redirected_to articles_path
