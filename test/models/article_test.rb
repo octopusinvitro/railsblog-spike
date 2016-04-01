@@ -5,16 +5,19 @@ class ArticleTest < ActiveSupport::TestCase
   test "is invalid without a title" do
     a = Article.new
     assert a.invalid?
+    assert_not a.save
   end
 
   test "is invalid if title length is less than minimum" do
     a = create_article_with(title: "hey")
     assert a.invalid?
+    assert_not a.save
   end
 
   test "is valid if has a title and it is larger than the minimum" do
     a = create_article_with(title: "A title")
     assert a.valid?
+    assert a.save
   end
 
   test "an article has many comments" do

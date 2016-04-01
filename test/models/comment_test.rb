@@ -6,11 +6,14 @@ class CommentTest < ActiveSupport::TestCase
     @comment = create_comment_from_article
   end
 
+  def teardown
+    @comment.destroy
+  end
+
   test "is invalid without an article" do
-    comment1 = Comment.new
-    comment2 = create_comment_with(article_id: nil)
-    assert comment1.invalid?
-    assert comment2.invalid?
+    invalid_comment = Comment.new
+    assert invalid_comment.invalid?
+    assert_not invalid_comment.save
   end
 
   test "is valid if it has an article" do

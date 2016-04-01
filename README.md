@@ -1,5 +1,8 @@
 # README
 
+This Rails app is a breakable toy.
+It uses Minitest.
+
 * **Ruby version:** Check out the `.ruby-version` file.
 
 * **How to setup the project:** 
