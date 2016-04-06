@@ -23,4 +23,5 @@ $ bin/rake db:setup
 
 ## License
 
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/gnu-license-green.svg?style=flat)](https://opensource.org/licenses/GPL-2.0)
+GNU License
