@@ -12,11 +12,11 @@ class ArticlesControllerTest < ActionController::TestCase # rubocop:disable Metr
   end
 
   def edit
-    get :edit, id: @id
+    get :edit, params: { id: @id }
   end
 
   def show
-    get :show, id: @id
+    get :show, params: { id: @id }
   end
 
   def new_article
@@ -24,15 +24,15 @@ class ArticlesControllerTest < ActionController::TestCase # rubocop:disable Metr
   end
 
   def create
-    post :create, article: { title: 'A title' }
+    post :create, params: { article: { title: 'A title' } }
   end
 
   def update
-    put  :update, id: @id, article: { title: 'Yet another title' }
+    put  :update, params: { id: @id, article: { title: 'Yet another title' } }
   end
 
   def destroy
-    delete :destroy, id: @id
+    delete :destroy, params: { id: @id }
   end
 
   def assert_renders(template, partial = '')
@@ -118,7 +118,7 @@ class ArticlesControllerTest < ActionController::TestCase # rubocop:disable Metr
     login
     bad_title = ''
     assert_no_difference('Article.count') do
-      post :create, article: { title: bad_title }
+      post :create, params: { article: { title: bad_title } }
     end
     assert_routing new_article_path, controller: 'articles', action: 'new'
   end
@@ -134,7 +134,7 @@ class ArticlesControllerTest < ActionController::TestCase # rubocop:disable Metr
   test 'should render new if there were errors when updating' do
     login
     bad_title = ''
-    put :update, id: @id, article: { title: bad_title }
+    put :update, params: { id: @id, article: { title: bad_title } }
     assert_routing new_article_path, controller: 'articles', action: 'new'
   end
 
@@ -169,14 +169,14 @@ class ArticlesControllerTest < ActionController::TestCase # rubocop:disable Metr
   test 'renders the new template if there are errors when creating article' do
     login
     bad_title = ''
-    post :create, article: { title: bad_title }
+    post :create, params: { article: { title: bad_title } }
     assert_renders(:new, '_form')
   end
 
   test 'renders the edit template if there are errors when updating article' do
     login
     bad_title = ''
-    put :update, id: @id, article: { title: bad_title }
+    put :update, params: { id: @id, article: { title: bad_title } }
     assert_renders(:edit, '_form')
   end
 end

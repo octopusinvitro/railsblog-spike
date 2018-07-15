@@ -4,15 +4,17 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
   def delete_comment
-    delete :destroy,
-           article_id: comments(:one).article_id,
-           id: comments(:one).id
+    delete :destroy, params: {
+      article_id: comments(:one).article_id,
+      id: comments(:one).id
+    }
   end
 
   def create_comment
-    post :create,
-         article_id: comments(:one).article_id,
-         comment: { commenter: 'foo', body: 'bar' }
+    post :create, params: {
+      article_id: comments(:one).article_id,
+      comment: { commenter: 'foo', body: 'bar' }
+    }
   end
 
   test 'creates a comment' do
