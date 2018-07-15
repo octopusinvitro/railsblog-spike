@@ -2,7 +2,7 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.5.1
   Exclude:
-    - 'db/schema.db'
+    - 'db/schema.rb'
 
 Documentation:
   Enabled: false
