@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "yeqpacha", password: "secret", except: [:index, :show]
-  before_action :fetch, only: [:edit, :show, :update, :destroy]
+  http_basic_authenticate_with(
+    name: 'yeqpacha', password: 'secret', except: %i[index show]
+  )
+  before_action :fetch, only: %i[edit show update destroy]
 
   def index
     @articles = Article.all
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-  end
+  def show; end
 
   def new
     @article = Article.new

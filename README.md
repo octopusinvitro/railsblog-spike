@@ -1,6 +1,12 @@
+[![Build Status](https://travis-ci.org/octopusinvitro/railsblog-spike.svg?branch=master)](https://travis-ci.org/octopusinvitro/railsblog-spike)
+[![build status](https://gitlab.com/octopusinvitro/railsblog-spike/badges/master/build.svg)](https://gitlab.com/octopusinvitro/railsblog-spike/commits/master)
+[![Coverage Status](https://coveralls.io/repos/github/octopusinvitro/railsblog-spike/badge.svg?branch=master)](https://coveralls.io/github/octopusinvitro/railsblog-spike?branch=master)
+[![Dependency status](https://badges.depfu.com/badges/13769679d7e545d6654b5c9f2918255f/overview.svg)](https://depfu.com/github/octopusinvitro/railsblog-spike?project=Bundler)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cb1f4cf54cf53ec62381/maintainability)](https://codeclimate.com/github/octopusinvitro/railsblog-spike/maintainability)
+
 # README
 
-This is a more advanced app to simulate a blog where you have to log in with an admin account in order to perform cRUD operations on the database.
+This is an app to simulate a blog where you have to log in with an admin account in order to perform CRUD operations on the database.
 
 You can access the app here https://railstwittersample.herokuapp.com
 
@@ -24,16 +30,10 @@ bundle install
 
 ## Running the tests
 
-Ensure that the files in the `bin` directory have the right permissions:
-
-```bash
-chmod +x bin/*
-```
-
 Make sure all the migrations have run:
 
 ```bash
-bundle exec bin/rake db:migrate RAILS_ENV=test
+bundle exec rake db:setup db:migrate RAILS_ENV=test
 ```
 
 And then
@@ -42,7 +42,7 @@ And then
 bundle exec rake
 ```
 
-To run the test suite in pride mode type `bundle exec bin/rake test TESTOPTS='--pride'`
+To run the test suite in pride mode type `bundle exec rake test TESTOPTS='--pride'`
 
 
 
@@ -51,8 +51,7 @@ To run the test suite in pride mode type `bundle exec bin/rake test TESTOPTS='--
 Make sure all the migrations have run:
 
 ```bash
-bundle exec bin/rake db:migrate RAILS_ENV=development
-bundle exec rake db:setup
+bundle exec rake db:setup db:migrate RAILS_ENV=development
 ```
 
 And then
@@ -64,7 +63,7 @@ bundle exec rails s
 Then go to <http://localhost:3000/>
 
 
-To start the app in production do `bin/rails s -e production`
+To start the app in production do `bundle exec rails s -e production`
 
 
 ## Installing the Heroku cli
@@ -90,7 +89,7 @@ heroku login
 Create the app if it doesn't exist yet
 
 ```bash
-heroku create
+heroku create yourapp
 ```
 
 Make sure that the app is in your remotes
@@ -110,4 +109,3 @@ git push heroku master
 
 [![License](https://img.shields.io/badge/gnu-license-green.svg?style=flat)](https://opensource.org/licenses/GPL-2.0)
 GNU License
-
