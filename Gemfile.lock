@@ -53,7 +53,7 @@ GEM
     crass (1.0.4)
     debug_inspector (0.0.2)
     erubis (2.7.0)
-    execjs (2.6.0)
+    execjs (2.7.0)
     ffi (1.9.25)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -149,7 +149,7 @@ GEM
       coffee-rails
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
     web-console (2.3.0)
       activemodel (>= 4.0)
