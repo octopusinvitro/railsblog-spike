@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.6'
@@ -50,5 +50,8 @@ group :development do
 end
 
 group :test do
+  gem 'coveralls', require: false
   gem 'pry'
+  gem 'rake'
+  gem 'rubocop', require: false
 end
